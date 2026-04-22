@@ -1,0 +1,31 @@
+
+> deeptruth-frontend@0.1.0 dev
+> next dev
+
+  ▲ Next.js 14.2.35
+  - Local:        http://localhost:3000
+
+ ✓ Starting...
+ ✓ Ready in 2.5s
+ ○ Compiling / ...
+ ✓ Compiled / in 609ms (465 modules)
+ GET / 307 in 812ms
+ ○ Compiling /login ...
+ ✓ Compiled /login in 1044ms (564 modules)
+ GET /login 200 in 1249ms
+ ○ Compiling /dashboard ...
+ ✓ Compiled /dashboard in 1334ms (1683 modules)
+ ✓ Compiled /audio in 472ms (1693 modules)
+ GET / 307 in 101ms
+ GET /login 200 in 76ms
+ ○ Compiling /fusion ...
+ ✓ Compiled /fusion in 717ms (1708 modules)
+ ✓ Compiled /history in 502ms (1720 modules)
+ GET /history 200 in 636ms
+ ○ Compiling /analysis ...
+ ✓ Compiled /analysis in 582ms (1730 modules)
+ ○ Compiling / ...
+ ✓ Compiled / in 535ms (858 modules)
+ GET / 307 in 710ms
+ ✓ Compiled /login in 170ms (870 modules)
+ GET /login 200 in 358ms

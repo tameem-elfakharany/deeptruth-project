@@ -1,0 +1,248 @@
+============================================================
+  DeepTruth — Data Preparation Pipeline
+  Estimated total time: 4-8 hours
+  Safe to interrupt and resume at any step.
+============================================================
+
+============================================================
+  STEP 0 — Installing required packages
+============================================================
+
+>> Installing torch...
+  [OK] torch ready
+
+>> Installing facenet-pytorch...
+  [OK] facenet-pytorch ready
+
+>> Installing opencv-python...
+  [OK] opencv-python ready
+
+>> Installing gdown...
+  [OK] gdown ready
+
+>> Installing huggingface_hub...
+  [OK] huggingface_hub ready
+
+>> Installing kaggle...
+  [OK] kaggle ready
+
+>> Installing tqdm...
+  [OK] tqdm ready
+
+>> Installing Pillow...
+  [OK] Pillow ready
+
+>> Installing numpy...
+  [OK] numpy ready
+
+============================================================
+  STEP 1 — Verifying existing data
+============================================================
+  Real images (FFHQ):        50,000  (expected ~50,000)
+  Fake images (StyleGAN2):   50,000  (expected ~50,000)
+  DFD real videos:           363
+  DFD fake videos:           3,068
+
+============================================================
+  STEP 2 — Downloading AI-generated face datasets
+============================================================
+  Downloads multiple Kaggle datasets covering GAN + diffusion fakes
+  [OK] AI-generated images already downloaded (190,335 images)
+
+============================================================
+  STEP 2b — Downloading OpenRL/DeepFakeFace (diffusion face fakes)
+============================================================
+  Source: HuggingFace OpenRL/DeepFakeFace | arXiv:2309.02218
+  Size: ~5.1 GB | 120K face images | SD v1.5 inpainting + standard
+
+>> Downloading via HuggingFace Hub...
+By pressing any key to continue you confirm that you have agreed to the FaceForensics terms of use as described at:
+http://kaldir.vc.in.tum.de/faceforensics/webpage/FaceForensics_TOS.pdf
+***
+Auto-confirming TOS (--auto_confirm flag set).
+Downloading videos of dataset "original_sequences/youtube"
+Downloading the first 300 videos
+Output path: C:\Users\hp\Desktop\DeepTruth\data\raw\videos\faceforensics\original_sequences/youtube\c23\videos
+WARNING: skipping download of existing file C:\Users\hp\Desktop\DeepTruth\data\raw\videos\faceforensics\original_sequences/youtube\c23\videos\585.mp4
+WARNING: skipping download of existing file C:\Users\hp\Desktop\DeepTruth\data\raw\videos\faceforensics\original_sequences/youtube\c23\videos\599.mp4
+WARNING: skipping download of existing file C:\Users\hp\Desktop\DeepTruth\data\raw\videos\faceforensics\original_sequences/youtube\c23\videos\469.mp4
+WARNING: skipping download of existing file C:\Users\hp\Desktop\DeepTruth\data\raw\videos\faceforensics\original_sequences/youtube\c23\videos\481.mp4
+WARNING: skipping download of existing file C:\Users\hp\Desktop\DeepTruth\data\raw\videos\faceforensics\original_sequences/youtube\c23\videos\183.mp4
+WARNING: skipping download of existing file C:\Users\hp\Desktop\DeepTruth\data\raw\videos\faceforensics\original_sequences/youtube\c23\videos\253.mp4
+WARNING: skipping download of existing file C:\Users\hp\Desktop\DeepTruth\data\raw\videos\faceforensics\original_sequences/youtube\c23\videos\672.mp4
+WARNING: skipping download of existing file C:\Users\hp\Desktop\DeepTruth\data\raw\videos\faceforensics\original_sequences/youtube\c23\videos\720.mp4
+WARNING: skipping download of existing file C:\Users\hp\Desktop\DeepTruth\data\raw\videos\faceforensics\original_sequences/youtube\c23\videos\866.mp4
+WARNING: skipping download of existing file C:\Users\hp\Desktop\DeepTruth\data\raw\videos\faceforensics\original_sequences/youtube\c23\videos\878.mp4
+WARNING: skipping download of existing file C:\Users\hp\Desktop\DeepTruth\data\raw\videos\faceforensics\original_sequences/youtube\c23\videos\339.mp4
+WARNING: skipping download of existing file C:\Users\hp\Desktop\DeepTruth\data\raw\videos\faceforensics\original_sequences/youtube\c23\videos\392.mp4
+WARNING: skipping download of existing file C:\Users\hp\Desktop\DeepTruth\data\raw\videos\faceforensics\original_sequences/youtube\c23\videos\828.mp4
+WARNING: skipping download of existing file C:\Users\hp\Desktop\DeepTruth\data\raw\videos\faceforensics\original_sequences/youtube\c23\videos\830.mp4
+WARNING: skipping download of existing file C:\Users\hp\Desktop\DeepTruth\data\raw\videos\faceforensics\original_sequences/youtube\c23\videos\252.mp4
+WARNING: skipping download of existing file C:\Users\hp\Desktop\DeepTruth\data\raw\videos\faceforensics\original_sequences/youtube\c23\videos\266.mp4
+WARNING: skipping download of existing file C:\Users\hp\Desktop\DeepTruth\data\raw\videos\faceforensics\original_sequences/youtube\c23\videos\033.mp4
+WARNING: skipping download of existing file C:\Users\hp\Desktop\DeepTruth\data\raw\videos\faceforensics\original_sequences/youtube\c23\videos\097.mp4
+WARNING: skipping download of existing file C:\Users\hp\Desktop\DeepTruth\data\raw\videos\faceforensics\original_sequences/youtube\c23\videos\210.mp4
+WARNING: skipping download of existing file C:\Users\hp\Desktop\DeepTruth\data\raw\videos\faceforensics\original_sequences/youtube\c23\videos\241.mp4
+WARNING: skipping download of existing file C:\Users\hp\Desktop\DeepTruth\data\raw\videos\faceforensics\original_sequences/youtube\c23\videos\945.mp4
+WARNING: skipping download of existing file C:\Users\hp\Desktop\DeepTruth\data\raw\videos\faceforensics\original_sequences/youtube\c23\videos\044.mp4
+WARNING: skipping download of existing file C:\Users\hp\Desktop\DeepTruth\data\raw\videos\faceforensics\original_sequences/youtube\c23\videos\134.mp4
+WARNING: skipping download of existing file C:\Users\hp\Desktop\DeepTruth\data\raw\videos\faceforensics\original_sequences/youtube\c23\videos\192.mp4
+WARNING: skipping download of existing file C:\Users\hp\Desktop\DeepTruth\data\raw\videos\faceforensics\original_sequences/youtube\c23\videos\942.mp4
+WARNING: skipping download of existing file C:\Users\hp\Desktop\DeepTruth\data\raw\videos\faceforensics\original_sequences/youtube\c23\videos\943.mp4
+WARNING: skipping download of existing file C:\Users\hp\Desktop\DeepTruth\data\raw\videos\faceforensics\original_sequences/youtube\c23\videos\035.mp4
+WARNING: skipping download of existing file C:\Users\hp\Desktop\DeepTruth\data\raw\videos\faceforensics\original_sequences/youtube\c23\videos\036.mp4
+WARNING: skipping download of existing file C:\Users\hp\Desktop\DeepTruth\data\raw\videos\faceforensics\original_sequences/youtube\c23\videos\917.mp4
+WARNING: skipping download of existing file C:\Users\hp\Desktop\DeepTruth\data\raw\videos\faceforensics\original_sequences/youtube\c23\videos\924.mp4
+WARNING: skipping download of existing file C:\Users\hp\Desktop\DeepTruth\data\raw\videos\faceforensics\original_sequences/youtube\c23\videos\263.mp4
+WARNING: skipping download of existing file C:\Users\hp\Desktop\DeepTruth\data\raw\videos\faceforensics\original_sequences/youtube\c23\videos\284.mp4
+WARNING: skipping download of existing file C:\Users\hp\Desktop\DeepTruth\data\raw\videos\faceforensics\original_sequences/youtube\c23\videos\648.mp4
+WARNING: skipping download of existing file C:\Users\hp\Desktop\DeepTruth\data\raw\videos\faceforensics\original_sequences/youtube\c23\videos\654.mp4
+WARNING: skipping download of existing file C:\Users\hp\Desktop\DeepTruth\data\raw\videos\faceforensics\original_sequences/youtube\c23\videos\712.mp4
+WARNING: skipping download of existing file C:\Users\hp\Desktop\DeepTruth\data\raw\videos\faceforensics\original_sequences/youtube\c23\videos\716.mp4
+WARNING: skipping download of existing file C:\Users\hp\Desktop\DeepTruth\data\raw\videos\faceforensics\original_sequences/youtube\c23\videos\986.mp4
+WARNING: skipping download of existing file C:\Users\hp\Desktop\DeepTruth\data\raw\videos\faceforensics\original_sequences/youtube\c23\videos\994.mp4
+WARNING: skipping download of existing file C:\Users\hp\Desktop\DeepTruth\data\raw\videos\faceforensics\original_sequences/youtube\c23\videos\644.mp4
+WARNING: skipping download of existing file C:\Users\hp\Desktop\DeepTruth\data\raw\videos\faceforensics\original_sequences/youtube\c23\videos\657.mp4
+WARNING: skipping download of existing file C:\Users\hp\Desktop\DeepTruth\data\raw\videos\faceforensics\original_sequences/youtube\c23\videos\055.mp4
+WARNING: skipping download of existing file C:\Users\hp\Desktop\DeepTruth\data\raw\videos\faceforensics\original_sequences/youtube\c23\videos\147.mp4
+WARNING: skipping download of existing file C:\Users\hp\Desktop\DeepTruth\data\raw\videos\faceforensics\original_sequences/youtube\c23\videos\159.mp4
+WARNING: skipping download of existing file C:\Users\hp\Desktop\DeepTruth\data\raw\videos\faceforensics\original_sequences/youtube\c23\videos\175.mp4
+WARNING: skipping download of existing file C:\Users\hp\Desktop\DeepTruth\data\raw\videos\faceforensics\original_sequences/youtube\c23\videos\980.mp4
+WARNING: skipping download of existing file C:\Users\hp\Desktop\DeepTruth\data\raw\videos\faceforensics\original_sequences/youtube\c23\videos\992.mp4
+WARNING: skipping download of existing file C:\Users\hp\Desktop\DeepTruth\data\raw\videos\faceforensics\original_sequences/youtube\c23\videos\272.mp4
+WARNING: skipping download of existing file C:\Users\hp\Desktop\DeepTruth\data\raw\videos\faceforensics\original_sequences/youtube\c23\videos\396.mp4
+WARNING: skipping download of existing file C:\Users\hp\Desktop\DeepTruth\data\raw\videos\faceforensics\original_sequences/youtube\c23\videos\811.mp4
+WARNING: skipping download of existing file C:\Users\hp\Desktop\DeepTruth\data\raw\videos\faceforensics\original_sequences/youtube\c23\videos\920.mp4
+WARNING: skipping download of existing file C:\Users\hp\Desktop\DeepTruth\data\raw\videos\faceforensics\original_sequences/youtube\c23\videos\683.mp4
+WARNING: skipping download of existing file C:\Users\hp\Desktop\DeepTruth\data\raw\videos\faceforensics\original_sequences/youtube\c23\videos\607.mp4
+WARNING: skipping download of existing file C:\Users\hp\Desktop\DeepTruth\data\raw\videos\faceforensics\original_sequences/youtube\c23\videos\062.mp4
+WARNING: skipping download of existing file C:\Users\hp\Desktop\DeepTruth\data\raw\videos\faceforensics\original_sequences/youtube\c23\videos\066.mp4
+WARNING: skipping download of existing file C:\Users\hp\Desktop\DeepTruth\data\raw\videos\faceforensics\original_sequences/youtube\c23\videos\107.mp4
+WARNING: skipping download of existing file C:\Users\hp\Desktop\DeepTruth\data\raw\videos\faceforensics\original_sequences/youtube\c23\videos\109.mp4
+WARNING: skipping download of existing file C:\Users\hp\Desktop\DeepTruth\data\raw\videos\faceforensics\original_sequences/youtube\c23\videos\529.mp4
+WARNING: skipping download of existing file C:\Users\hp\Desktop\DeepTruth\data\raw\videos\faceforensics\original_sequences/youtube\c23\videos\633.mp4
+WARNING: skipping download of existing file C:\Users\hp\Desktop\DeepTruth\data\raw\videos\faceforensics\original_sequences/youtube\c23\videos\288.mp4
+WARNING: skipping download of existing file C:\Users\hp\Desktop\DeepTruth\data\raw\videos\faceforensics\original_sequences/youtube\c23\videos\321.mp4
+WARNING: skipping download of existing file C:\Users\hp\Desktop\DeepTruth\data\raw\videos\faceforensics\original_sequences/youtube\c23\videos\206.mp4
+WARNING: skipping download of existing file C:\Users\hp\Desktop\DeepTruth\data\raw\videos\faceforensics\original_sequences/youtube\c23\videos\221.mp4
+WARNING: skipping download of existing file C:\Users\hp\Desktop\DeepTruth\data\raw\videos\faceforensics\original_sequences/youtube\c23\videos\904.mp4
+WARNING: skipping download of existing file C:\Users\hp\Desktop\DeepTruth\data\raw\videos\faceforensics\original_sequences/youtube\c23\videos\046.mp4
+WARNING: skipping download of existing file C:\Users\hp\Desktop\DeepTruth\data\raw\videos\faceforensics\original_sequences/youtube\c23\videos\150.mp4
+WARNING: skipping download of existing file C:\Users\hp\Desktop\DeepTruth\data\raw\videos\faceforensics\original_sequences/youtube\c23\videos\153.mp4
+WARNING: skipping download of existing file C:\Users\hp\Desktop\DeepTruth\data\raw\videos\faceforensics\original_sequences/youtube\c23\videos\435.mp4
+WARNING: skipping download of existing file C:\Users\hp\Desktop\DeepTruth\data\raw\videos\faceforensics\original_sequences/youtube\c23\videos\456.mp4
+WARNING: skipping download of existing file C:\Users\hp\Desktop\DeepTruth\data\raw\videos\faceforensics\original_sequences/youtube\c23\videos\254.mp4
+WARNING: skipping download of existing file C:\Users\hp\Desktop\DeepTruth\data\raw\videos\faceforensics\original_sequences/youtube\c23\videos\261.mp4
+WARNING: skipping download of existing file C:\Users\hp\Desktop\DeepTruth\data\raw\videos\faceforensics\original_sequences/youtube\c23\videos\257.mp4
+WARNING: skipping download of existing file C:\Users\hp\Desktop\DeepTruth\data\raw\videos\faceforensics\original_sequences/youtube\c23\videos\420.mp4
+WARNING: skipping download of existing file C:\Users\hp\Desktop\DeepTruth\data\raw\videos\faceforensics\original_sequences/youtube\c23\videos\953.mp4
+WARNING: skipping download of existing file C:\Users\hp\Desktop\DeepTruth\data\raw\videos\faceforensics\original_sequences/youtube\c23\videos\974.mp4
+WARNING: skipping download of existing file C:\Users\hp\Desktop\DeepTruth\data\raw\videos\faceforensics\original_sequences/youtube\c23\videos\360.mp4
+WARNING: skipping download of existing file C:\Users\hp\Desktop\DeepTruth\data\raw\videos\faceforensics\original_sequences/youtube\c23\videos\437.mp4
+WARNING: skipping download of existing file C:\Users\hp\Desktop\DeepTruth\data\raw\videos\faceforensics\original_sequences/youtube\c23\videos\651.mp4
+WARNING: skipping download of existing file C:\Users\hp\Desktop\DeepTruth\data\raw\videos\faceforensics\original_sequences/youtube\c23\videos\835.mp4
+WARNING: skipping download of existing file C:\Users\hp\Desktop\DeepTruth\data\raw\videos\faceforensics\original_sequences/youtube\c23\videos\439.mp4
+WARNING: skipping download of existing file C:\Users\hp\Desktop\DeepTruth\data\raw\videos\faceforensics\original_sequences/youtube\c23\videos\441.mp4
+WARNING: skipping download of existing file C:\Users\hp\Desktop\DeepTruth\data\raw\videos\faceforensics\original_sequences/youtube\c23\videos\554.mp4
+WARNING: skipping download of existing file C:\Users\hp\Desktop\DeepTruth\data\raw\videos\faceforensics\original_sequences/youtube\c23\videos\572.mp4
+WARNING: skipping download of existing file C:\Users\hp\Desktop\DeepTruth\data\raw\videos\faceforensics\original_sequences/youtube\c23\videos\896.mp4
+WARNING: skipping download of existing file C:\Users\hp\Desktop\DeepTruth\data\raw\videos\faceforensics\original_sequences/youtube\c23\videos\128.mp4
+WARNING: skipping download of existing file C:\Users\hp\Desktop\DeepTruth\data\raw\videos\faceforensics\original_sequences/youtube\c23\videos\337.mp4
+WARNING: skipping download of existing file C:\Users\hp\Desktop\DeepTruth\data\raw\videos\faceforensics\original_sequences/youtube\c23\videos\522.mp4
+WARNING: skipping download of existing file C:\Users\hp\Desktop\DeepTruth\data\raw\videos\faceforensics\original_sequences/youtube\c23\videos\671.mp4
+WARNING: skipping download of existing file C:\Users\hp\Desktop\DeepTruth\data\raw\videos\faceforensics\original_sequences/youtube\c23\videos\677.mp4
+WARNING: skipping download of existing file C:\Users\hp\Desktop\DeepTruth\data\raw\videos\faceforensics\original_sequences/youtube\c23\videos\779.mp4
+WARNING: skipping download of existing file C:\Users\hp\Desktop\DeepTruth\data\raw\videos\faceforensics\original_sequences/youtube\c23\videos\794.mp4
+WARNING: skipping download of existing file C:\Users\hp\Desktop\DeepTruth\data\raw\videos\faceforensics\original_sequences/youtube\c23\videos\556.mp4
+WARNING: skipping download of existing file C:\Users\hp\Desktop\DeepTruth\data\raw\videos\faceforensics\original_sequences/youtube\c23\videos\588.mp4
+WARNING: skipping download of existing file C:\Users\hp\Desktop\DeepTruth\data\raw\videos\faceforensics\original_sequences/youtube\c23\videos\434.mp4
+WARNING: skipping download of existing file C:\Users\hp\Desktop\DeepTruth\data\raw\videos\faceforensics\original_sequences/youtube\c23\videos\438.mp4
+WARNING: skipping download of existing file C:\Users\hp\Desktop\DeepTruth\data\raw\videos\faceforensics\original_sequences/youtube\c23\videos\565.mp4
+WARNING: skipping download of existing file C:\Users\hp\Desktop\DeepTruth\data\raw\videos\faceforensics\original_sequences/youtube\c23\videos\589.mp4
+Downloading videos of dataset "original_sequences/actors"
+Downloading the first 300 videos
+Output path: C:\Users\hp\Desktop\DeepTruth\data\raw\videos\faceforensics\original_sequences/actors\c23\videos
+Downloading videos of dataset "manipulated_sequences/Deepfakes"
+Downloading the first 300 videos
+Output path: C:\Users\hp\Desktop\DeepTruth\data\raw\videos\faceforensics\manipulated_sequences/Deepfakes\c23\videos
+Downloading videos of dataset "manipulated_sequences/DeepFakeDetection"
+Downloading the first 300 videos
+Output path: C:\Users\hp\Desktop\DeepTruth\data\raw\videos\faceforensics\manipulated_sequences/DeepFakeDetection\c23\videos
+Downloading videos of dataset "manipulated_sequences/Face2Face"
+Downloading the first 300 videos
+Output path: C:\Users\hp\Desktop\DeepTruth\data\raw\videos\faceforensics\manipulated_sequences/Face2Face\c23\videos
+Downloading videos of dataset "manipulated_sequences/FaceShifter"
+Downloading the first 300 videos
+Output path: C:\Users\hp\Desktop\DeepTruth\data\raw\videos\faceforensics\manipulated_sequences/FaceShifter\c23\videos
+Downloading videos of dataset "manipulated_sequences/FaceSwap"
+Downloading the first 300 videos
+Output path: C:\Users\hp\Desktop\DeepTruth\data\raw\videos\faceforensics\manipulated_sequences/FaceSwap\c23\videos
+Downloading videos of dataset "manipulated_sequences/NeuralTextures"
+Downloading the first 300 videos
+Output path: C:\Users\hp\Desktop\DeepTruth\data\raw\videos\faceforensics\manipulated_sequences/NeuralTextures\c23\videos
+  [OK] Snapshot downloaded to: C:\Users\hp\Desktop\DeepTruth\data\raw\deepfakeface\hf_cache\datasets--OpenRL--DeepFakeFace\snapshots\eb2a54fbf2567790bd3dc61d09fdaade6bb6c31c
+
+>> Found 4 ZIP file(s) — extracting...
+
+>>   inpainting.zip → fake/
+
+>>   insight.zip → fake/
+
+>>   text2img.zip → fake/
+
+>>   wiki.zip → fake/
+  [OK] OpenRL/DeepFakeFace: 0 real, 120,000 fake faces
+
+============================================================
+  STEP 2c — Downloading DiffusionFace (Zenodo | arXiv:2403.18471)
+============================================================
+  Source: zenodo.org/records/10865300  (CC-BY-4.0)
+  Size: ~50 GB | 11 diffusion models | face forgery dataset
+
+>> Fetching file list for Zenodo record 10865300...
+  [WARN] Could not fetch Zenodo record 10865300: HTTP Error 403: Forbidden
+
+>> Fetching file list for Zenodo record 10865065...
+  [WARN] Could not fetch Zenodo record 10865065: HTTP Error 403: Forbidden
+  [OK] DiffusionFace total: 0 images in C:\Users\hp\Desktop\DeepTruth\data\raw\diffusionface
+
+============================================================
+  STEP 3 — Downloading CelebDF-v2 (high-quality celebrity face swaps)
+============================================================
+  Size: ~2.2GB
+
+>> Downloading CelebDF-v2 via Kaggle...
+  [WARN] CelebDF Kaggle download failed: 
+
+>> Trying gdown fallback for CelebDF-v2...
+
+  CelebDF-v2: 0 real, 0 fake videos
+
+============================================================
+  STEP 4 — Downloading FaceForensics++ (compressed c23)
+============================================================
+  Covers: Deepfakes, Face2Face, FaceShifter, FaceSwap, NeuralTextures
+  Downloading 300 videos per manipulation type (~10GB total)
+
+>> Downloading all FF++ manipulation types (300 videos each)...
+  You will need to press a key to confirm the Terms of Service.
+  The download will then run automatically.
+
+  [OK] FaceForensics++ downloaded: 2400 videos
+
+============================================================
+  STEP 5 — Downloading DFDC Preview (diverse real-world deepfakes)
+============================================================
+  Size: ~10GB | Covers: unconstrained in-the-wild deepfakes
+
+>> Downloading DFDC Preview from Kaggle...
+  [WARN] DFDC download failed: 
+
+>> Trying alternative DFDC dataset...
+  [WARN] Alternative also failed: 
+  [WARN] Skipping DFDC.
+
+============================================================
+  STEP 6 — Extracting frames from all video datasets
+============================================================
+  [OK] DFD Real: already extracted (2,588 frames)
