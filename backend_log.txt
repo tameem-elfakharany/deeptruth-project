@@ -1,0 +1,113 @@
+INFO:     Will watch for changes in these directories: ['C:\\Users\\hp\\Desktop\\DeepTruth\\backend']
+INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+INFO:     Started reloader process [45544] using StatReload
+2026-04-11 23:53:10.680275: I tensorflow/core/util/port.cc:113] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+WARNING:tensorflow:From C:\Users\hp\Desktop\DeepTruth\.venv\lib\site-packages\keras\src\losses.py:2976: The name tf.losses.sparse_softmax_cross_entropy is deprecated. Please use tf.compat.v1.losses.sparse_softmax_cross_entropy instead.
+
+INFO:     Started server process [33236]
+INFO:     Waiting for application startup.
+2026-04-11 23:53:15,814 INFO app.main - Starting up...
+C:\Users\hp\Desktop\DeepTruth\.venv\lib\site-packages\huggingface_hub\file_download.py:949: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+C:\Users\hp\Desktop\DeepTruth\.venv\lib\site-packages\torch\_utils.py:831: UserWarning: TypedStorage is deprecated. It will be removed in the future and UntypedStorage will be the only storage class. This should only matter to you if you are using storages directly.  To access UntypedStorage directly, use tensor.untyped_storage() instead of tensor.storage()
+  return self.fget.__get__(instance, owner)()
+2026-04-11 23:53:21,392 INFO timm.models._builder - Loading pretrained weights from Hugging Face hub (timm/efficientnet_b4.ra2_in1k)
+2026-04-11 23:53:21,611 INFO timm.models._hub - [timm/efficientnet_b4.ra2_in1k] Safe alternative available for 'pytorch_model.bin' (as 'model.safetensors'). Loading weights using safetensors.
+C:\Users\hp\Desktop\DeepTruth\.venv\lib\site-packages\torch\nn\modules\transformer.py:282: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  warnings.warn(f"enable_nested_tensor is True, but self.use_nested_tensor is False because {why_not_sparsity_fast_path}")
+2026-04-11 23:53:21,864 INFO app.services.model_loader - PyTorch model loaded from C:\Users\hp\Desktop\DeepTruth\models\deeptruth_image_model_final.pth on cpu
+2026-04-11 23:53:21,864 INFO app.main - Image model ready: type=pytorch
+WARNING:tensorflow:From C:\Users\hp\Desktop\DeepTruth\.venv\lib\site-packages\keras\src\backend.py:1398: The name tf.executing_eagerly_outside_functions is deprecated. Please use tf.compat.v1.executing_eagerly_outside_functions instead.
+
+2026-04-11 23:53:22,130 WARNING tensorflow - From C:\Users\hp\Desktop\DeepTruth\.venv\lib\site-packages\keras\src\backend.py:1398: The name tf.executing_eagerly_outside_functions is deprecated. Please use tf.compat.v1.executing_eagerly_outside_functions instead.
+
+2026-04-11 23:53:22.168533: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: SSE SSE2 SSE3 SSE4.1 SSE4.2 AVX2 AVX512F AVX512_VNNI FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+WARNING:tensorflow:From C:\Users\hp\Desktop\DeepTruth\.venv\lib\site-packages\keras\src\layers\normalization\batch_normalization.py:979: The name tf.nn.fused_batch_norm is deprecated. Please use tf.compat.v1.nn.fused_batch_norm instead.
+
+2026-04-11 23:53:22,240 WARNING tensorflow - From C:\Users\hp\Desktop\DeepTruth\.venv\lib\site-packages\keras\src\layers\normalization\batch_normalization.py:979: The name tf.nn.fused_batch_norm is deprecated. Please use tf.compat.v1.nn.fused_batch_norm instead.
+
+2026-04-11 23:53:22,492 INFO app.services.model_loader - TF video model loaded from: C:\Users\hp\Desktop\DeepTruth\models\lipnet_deepfake_classifier.h5
+2026-04-11 23:53:22,492 INFO app.main - Video model ready: type=tensorflow
+C:\Users\hp\Desktop\DeepTruth\.venv\lib\site-packages\transformers\configuration_utils.py:363: UserWarning: Passing `gradient_checkpointing` to a config initialization is deprecated and will be removed in v5 Transformers. Using `model.gradient_checkpointing_enable()` instead, or if you are using the `Trainer` API, pass `gradient_checkpointing=True` in your `TrainingArguments`.
+  warnings.warn(
+Some weights of Wav2Vec2Model were not initialized from the model checkpoint at facebook/wav2vec2-base and are newly initialized: ['wav2vec2.encoder.pos_conv_embed.conv.parametrizations.weight.original0', 'wav2vec2.encoder.pos_conv_embed.conv.parametrizations.weight.original1']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+2026-04-11 23:53:24,080 INFO app.services.model_loader - Audio model loaded from C:\Users\hp\Desktop\DeepTruth\models\deeptruth_audio_model_final.pth on cpu
+2026-04-11 23:53:24,081 INFO app.main - Audio model ready: type=pytorch_audio
+INFO:     Application startup complete.
+DeepTruth model architecture loaded.
+  Streams: CLIP + EfficientNet-B4 + Frequency + SRM + GramStyle
+  Device: cpu
+INFO:     127.0.0.1:52759 - "OPTIONS /auth/me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52760 - "OPTIONS /auth/me HTTP/1.1" 200 OK
+2026-04-11 23:54:19,215 INFO app.main - Incoming request: GET /auth/me
+2026-04-11 23:54:19,230 INFO app.api.auth - Fetching current user info
+2026-04-11 23:54:19,232 INFO app.api.auth - Current user: tameem.elfakharany@gmail.com
+2026-04-11 23:54:19,241 INFO app.main - Response status: 200
+INFO:     127.0.0.1:52759 - "GET /auth/me HTTP/1.1" 200 OK
+2026-04-11 23:54:19,243 INFO app.main - Incoming request: GET /auth/me
+2026-04-11 23:54:19,244 INFO app.api.auth - Fetching current user info
+2026-04-11 23:54:19,245 INFO app.api.auth - Current user: tameem.elfakharany@gmail.com
+2026-04-11 23:54:19,245 INFO app.main - Response status: 200
+INFO:     127.0.0.1:52759 - "GET /auth/me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52759 - "OPTIONS /auth/login HTTP/1.1" 200 OK
+2026-04-11 23:54:23,342 INFO app.main - Incoming request: POST /auth/login
+2026-04-11 23:54:23,343 INFO app.api.auth - Login attempt for email: tameem.elfakharany@gmail.com
+2026-04-11 23:54:23,449 INFO app.api.auth - Login successful for email: tameem.elfakharany@gmail.com, user_id: 1
+2026-04-11 23:54:23,449 INFO app.main - Response status: 200
+INFO:     127.0.0.1:52760 - "POST /auth/login HTTP/1.1" 200 OK
+2026-04-11 23:54:23,466 INFO app.main - Incoming request: GET /auth/me
+2026-04-11 23:54:23,466 INFO app.api.auth - Fetching current user info
+2026-04-11 23:54:23,466 INFO app.api.auth - Current user: tameem.elfakharany@gmail.com
+2026-04-11 23:54:23,466 INFO app.main - Response status: 200
+INFO:     127.0.0.1:52760 - "GET /auth/me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52760 - "OPTIONS /predictions/me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52759 - "OPTIONS /predictions/me HTTP/1.1" 200 OK
+2026-04-11 23:54:23,793 INFO app.main - Incoming request: GET /predictions/me
+2026-04-11 23:54:23,807 INFO app.main - Response status: 200
+INFO:     127.0.0.1:52760 - "GET /predictions/me HTTP/1.1" 200 OK
+2026-04-11 23:54:23,809 INFO app.main - Incoming request: GET /predictions/me
+2026-04-11 23:54:23,811 INFO app.main - Response status: 200
+INFO:     127.0.0.1:52760 - "GET /predictions/me HTTP/1.1" 200 OK
+2026-04-11 23:54:36,840 INFO app.main - Incoming request: POST /predict
+2026-04-11 23:54:36,842 INFO app.api.routes - Request received: /predict filename=WhatsApp Image 2026-04-11 at 11.37.52 PM.jpeg
+2026-04-11 23:54:37,981 INFO app.api.routes - Prediction: filename=WhatsApp_Image_2026-04-11_at_11.37.52_PM.jpeg raw=0.108771 faces=1 type=Real
+2026-04-11 23:54:37,996 INFO app.main - Response status: 200
+INFO:     127.0.0.1:52768 - "POST /predict HTTP/1.1" 200 OK
+2026-04-11 23:54:52,699 INFO app.main - Incoming request: POST /predict
+2026-04-11 23:54:52,702 INFO app.api.routes - Request received: /predict filename=WhatsApp Image 2026-04-11 at 11.39.49 PM.jpeg
+2026-04-11 23:54:54,754 INFO app.api.routes - Prediction: filename=WhatsApp_Image_2026-04-11_at_11.39.49_PM.jpeg raw=0.482734 faces=4 type=Unknown fake
+2026-04-11 23:54:54,795 INFO app.main - Response status: 200
+INFO:     127.0.0.1:52771 - "POST /predict HTTP/1.1" 200 OK
+2026-04-11 23:55:08,920 INFO app.main - Incoming request: POST /predict
+2026-04-11 23:55:08,922 INFO app.api.routes - Request received: /predict filename=WhatsApp Image 2026-04-11 at 11.37.29 PM.jpeg
+2026-04-11 23:55:09,758 INFO app.api.routes - Prediction: filename=WhatsApp_Image_2026-04-11_at_11.37.29_PM.jpeg raw=0.231459 faces=2 type=Real
+2026-04-11 23:55:09,782 INFO app.main - Response status: 200
+INFO:     127.0.0.1:52773 - "POST /predict HTTP/1.1" 200 OK
+2026-04-11 23:55:20,794 INFO app.main - Incoming request: POST /predict
+2026-04-11 23:55:20,794 INFO app.api.routes - Request received: /predict filename=WhatsApp Image 2026-04-11 at 11.49.10 PM.jpeg
+2026-04-11 23:55:21,239 INFO app.api.routes - Prediction: filename=WhatsApp_Image_2026-04-11_at_11.49.10_PM.jpeg raw=0.279204 faces=1 type=Real
+2026-04-11 23:55:21,268 INFO app.main - Response status: 200
+INFO:     127.0.0.1:52774 - "POST /predict HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52818 - "OPTIONS /predict HTTP/1.1" 200 OK
+2026-04-11 23:58:54,741 INFO app.main - Incoming request: POST /predict
+2026-04-11 23:58:54,741 INFO app.api.routes - Request received: /predict filename=WhatsApp Image 2026-04-11 at 11.37.29 PM.jpeg
+2026-04-11 23:58:55,715 INFO app.api.routes - Prediction: filename=WhatsApp_Image_2026-04-11_at_11.37.29_PM.jpeg raw=0.231459 faces=2 type=Real
+2026-04-11 23:58:55,740 INFO app.main - Response status: 200
+INFO:     127.0.0.1:52818 - "POST /predict HTTP/1.1" 200 OK
+2026-04-12 00:04:50,180 INFO app.main - Incoming request: POST /predict
+2026-04-12 00:04:50,182 INFO app.api.routes - Request received: /predict filename=WhatsApp Image 2026-04-11 at 11.37.29 PM.jpeg
+2026-04-12 00:04:51,158 INFO app.api.routes - Prediction: filename=WhatsApp_Image_2026-04-11_at_11.37.29_PM.jpeg raw=0.231459 faces=2 type=Real
+2026-04-12 00:04:51,210 INFO app.main - Response status: 200
+INFO:     127.0.0.1:52899 - "POST /predict HTTP/1.1" 200 OK
+2026-04-12 00:04:52,025 INFO app.main - Incoming request: POST /predict
+2026-04-12 00:04:52,025 INFO app.api.routes - Request received: /predict filename=WhatsApp Image 2026-04-11 at 11.37.29 PM.jpeg
+2026-04-12 00:04:53,130 INFO app.api.routes - Prediction: filename=WhatsApp_Image_2026-04-11_at_11.37.29_PM.jpeg raw=0.231459 faces=2 type=Real
+2026-04-12 00:04:53,163 INFO app.main - Response status: 200
+INFO:     127.0.0.1:52899 - "POST /predict HTTP/1.1" 200 OK
+2026-04-12 00:05:14,357 INFO app.main - Incoming request: POST /predict
+2026-04-12 00:05:14,358 INFO app.api.routes - Request received: /predict filename=WhatsApp Image 2026-04-08 at 3.56.31 AM.jpeg
+2026-04-12 00:05:14,892 INFO app.api.routes - Prediction: filename=WhatsApp_Image_2026-04-08_at_3.56.31_AM.jpeg raw=0.184444 faces=1 type=Real
+2026-04-12 00:05:14,929 INFO app.main - Response status: 200
+INFO:     127.0.0.1:52907 - "POST /predict HTTP/1.1" 200 OK

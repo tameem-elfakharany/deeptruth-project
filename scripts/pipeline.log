@@ -1,0 +1,138 @@
+By pressing any key to continue you confirm that you have agreed to the FaceForensics terms of use as described at:
+http://canis.vc.in.tum.de:8100/webpage/FaceForensics_TOS.pdf
+***
+Auto-confirming TOS (--auto_confirm flag set).
+Downloading videos of dataset "original_sequences/youtube"
+============================================================
+  DeepTruth — Data Preparation Pipeline
+  Estimated total time: 4-8 hours
+  Safe to interrupt and resume at any step.
+============================================================
+
+============================================================
+  STEP 0 — Installing required packages
+============================================================
+
+>> Installing torch...
+  [OK] torch ready
+
+>> Installing facenet-pytorch...
+  [OK] facenet-pytorch ready
+
+>> Installing opencv-python...
+  [OK] opencv-python ready
+
+>> Installing gdown...
+  [OK] gdown ready
+
+>> Installing huggingface_hub...
+  [OK] huggingface_hub ready
+
+>> Installing kaggle...
+  [OK] kaggle ready
+
+>> Installing tqdm...
+  [OK] tqdm ready
+
+>> Installing Pillow...
+  [OK] Pillow ready
+
+>> Installing numpy...
+  [OK] numpy ready
+
+============================================================
+  STEP 1 — Verifying existing data
+============================================================
+  Real images (FFHQ):        50,000  (expected ~50,000)
+  Fake images (StyleGAN2):   50,000  (expected ~50,000)
+  DFD real videos:           363
+  DFD fake videos:           3,068
+
+============================================================
+  STEP 2 — Downloading GenImage subset (diffusion-generated faces)
+============================================================
+  Covers: DALL-E 3, Stable Diffusion 1.4, Midjourney
+  Size: ~8GB | Fixes: ChatGPT/AI image detection
+
+>> Downloading Stable Diffusion 1.4...
+  [WARN] Stable Diffusion 1.4 HuggingFace download failed: 401 Client Error. (Request ID: Root=1-69d28c6f-16034ae24eb738ce4d6c35fc;0217df74-81ae-4c67-a6e2-1a9a952b57ff)
+
+Repository Not Found for url: https://huggingface.co/api/datasets/GenImage/GenImage/revision/main.
+Please make sure you specified the correct `repo_id` and `repo_type`.
+If you are trying to access a private or gated repo, make sure you are authenticated and your token has the required permissions.
+For more details, see https://huggingface.co/docs/huggingface_hub/authentication
+Invalid username or password.
+  [WARN] Trying alternative: downloading from Kaggle...
+  [WARN] Kaggle fallback also failed: C:\Users\hp\AppData\Local\Programs\Python\Python310\python.exe: No module named kaggle.__main__; 'kaggle' is a package and cannot be directly executed
+
+  [WARN] Skipping GenImage. You can add diffusion images manually later.
+
+>> Downloading DALL-E 3...
+  [WARN] DALL-E 3 HuggingFace download failed: 401 Client Error. (Request ID: Root=1-69d28c6f-447a9c783ef8a01b2303a510;4e63cf8c-9c69-4b38-beb9-449f2bc2dbbd)
+
+Repository Not Found for url: https://huggingface.co/api/datasets/GenImage/GenImage/revision/main.
+Please make sure you specified the correct `repo_id` and `repo_type`.
+If you are trying to access a private or gated repo, make sure you are authenticated and your token has the required permissions.
+For more details, see https://huggingface.co/docs/huggingface_hub/authentication
+Invalid username or password.
+  [WARN] Trying alternative: downloading from Kaggle...
+  [WARN] Kaggle fallback also failed: C:\Users\hp\AppData\Local\Programs\Python\Python310\python.exe: No module named kaggle.__main__; 'kaggle' is a package and cannot be directly executed
+
+  [WARN] Skipping GenImage. You can add diffusion images manually later.
+
+>> Downloading Midjourney...
+  [WARN] Midjourney HuggingFace download failed: 401 Client Error. (Request ID: Root=1-69d28c70-3c8ff7b740783a786bd6ba4e;72337d24-a715-422d-85b6-99fb1b745a2c)
+
+Repository Not Found for url: https://huggingface.co/api/datasets/GenImage/GenImage/revision/main.
+Please make sure you specified the correct `repo_id` and `repo_type`.
+If you are trying to access a private or gated repo, make sure you are authenticated and your token has the required permissions.
+For more details, see https://huggingface.co/docs/huggingface_hub/authentication
+Invalid username or password.
+  [WARN] Trying alternative: downloading from Kaggle...
+  [WARN] Kaggle fallback also failed: C:\Users\hp\AppData\Local\Programs\Python\Python310\python.exe: No module named kaggle.__main__; 'kaggle' is a package and cannot be directly executed
+
+  [WARN] Skipping GenImage. You can add diffusion images manually later.
+
+  GenImage total: 0 images
+
+============================================================
+  STEP 3 — Downloading CelebDF-v2 (high-quality celebrity face swaps)
+============================================================
+  Size: ~2.2GB
+
+>> Downloading CelebDF-v2 real videos...
+  [OK] Real videos: 0
+
+>> Downloading CelebDF-v2 fake videos...
+  [OK] Fake videos: 0
+
+  CelebDF-v2: 0 real, 0 fake videos
+
+============================================================
+  STEP 4 — Downloading FaceForensics++ (compressed c23)
+============================================================
+  Covers: Deepfakes, Face2Face, FaceShifter, FaceSwap, NeuralTextures
+  Downloading 300 videos per manipulation type (~10GB total)
+
+>> Downloading all FF++ manipulation types (300 videos each)...
+  You will need to press a key to confirm the Terms of Service.
+  The download will then run automatically.
+
+  [WARN] FaceForensics++ download encountered an error.
+  [WARN] Try running the download script manually if needed.
+
+============================================================
+  STEP 5 — Downloading DFDC Preview (diverse real-world deepfakes)
+============================================================
+  Size: ~10GB | Covers: unconstrained in-the-wild deepfakes
+
+>> Downloading DFDC Preview from Kaggle...
+  [WARN] DFDC download failed. Check your Kaggle API key.
+
+>> Trying alternative DFDC dataset on Kaggle...
+  [WARN] Alternative also failed. Skipping DFDC.
+
+============================================================
+  STEP 6 — Extracting frames from all video datasets
+============================================================
+  [OK] DFD Real: 363 videos → 11,616 frames
